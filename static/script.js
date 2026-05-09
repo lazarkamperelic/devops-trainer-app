@@ -4,6 +4,7 @@ const startBtn = document.getElementById("startBtn");
 const playAgainBtn = document.getElementById("playAgainBtn");
 const categorySelect = document.getElementById("categorySelect");
 const subcategorySelect = document.getElementById("subcategorySelect");
+const timeSelect = document.getElementById("timeSelect");
 
 const startScreen = document.getElementById("startScreen");
 const gameScreen = document.getElementById("gameScreen");
@@ -25,7 +26,7 @@ let score = 0;
 let attempts = 0;
 let correctAnswers = 0;
 let matchedCount = 0;
-let timer = 90;
+let timer = parseInt(timeSelect.value);
 let interval = null;
 let data = [];
 
@@ -98,7 +99,7 @@ async function startGame() {
     attempts = 0;
     correctAnswers = 0;
     matchedCount = 0;
-    timer = 90;
+    timer = parseInt(timeSelect.value);
 
     updateScore();
     updateAccuracy();
