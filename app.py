@@ -22,7 +22,13 @@ def home():
 @app.route("/api/categories")
 def categories():
     data = load_questions()
-    return jsonify(data)
+    return jsonify({
+        key: {
+            "name": val["name"],
+            "subcategories": [[k, v] for k, v in val["subcategories"].items()]
+        }
+        for key, val in data.items()
+    })
 
 
 @app.route("/api/questions/<category>/<subcategory>")

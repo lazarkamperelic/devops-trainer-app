@@ -67,10 +67,10 @@ function updateSubcategories(categories) {
 
     subcategorySelect.innerHTML = "";
 
-    Object.keys(subcategories).forEach(subcategoryKey => {
+    subcategories.forEach(([key, sub]) => {
         const option = document.createElement("option");
-        option.value = subcategoryKey;
-        option.textContent = subcategories[subcategoryKey].name;
+        option.value = key;
+        option.textContent = sub.name;
         subcategorySelect.appendChild(option);
     });
 
