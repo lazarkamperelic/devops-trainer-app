@@ -106,14 +106,13 @@ button:hover {
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    column-gap: 16px;
+    row-gap: 12px;
     margin-top: 24px;
 }
 
 .column {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    display: contents;
 }
 
 /* CARDS */
