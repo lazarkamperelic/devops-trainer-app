@@ -45,20 +45,26 @@ A web-based matching game where players connect function descriptions to their c
 
 ```
 .
-├── app.py                # Flask application & API routes
-├── requirements.txt      # Python dependencies
-├── Dockerfile            # Docker image definition
-├── docker-compose.yml    # Compose service configuration
-├── .dockerignore         # Docker build exclusions
-├── .gitignore
+├── AGENTS.md              # Agent instructions for code editing assistants
+├── Dockerfile             # Docker image definition
+├── README.md              # Project documentation (this file)
+├── app.py                 # Flask application & API routes
 ├── data/
-│   └── questions.json    # Question bank (categories, subcategories, pairs)
+│   └── questions.json     # Question bank (categories, subcategories, pairs)
+├── docker-compose.yml     # Compose service configuration
+├── requirements.txt       # Python dependencies
+├── screenshots/
+│   ├── final-score.png    # Final score screen
+│   ├── gameplay.png       # Gameplay screen
+│   └── home-screen.png    # Home screen
+├── static/
+│   ├── favicon.png        # Favicon
+│   ├── script.js          # Game logic
+│   └── style.css          # Styles
 ├── templates/
-│   └── index.html        # Single-page game UI
-└── static/
-    ├── style.css         # Styles
-    ├── script.js         # Game logic
-    └── favicon.png       # Favicon
+│   └── index.html         # Single-page game UI
+├── .dockerignore          # Docker build exclusions
+└── .gitignore
 ```
 
 ## API Routes
