@@ -2,6 +2,10 @@
 
 A web-based matching game where players connect function descriptions to their corresponding commands. Covers Linux, Git, Docker, Kubernetes, Terraform, and AWS CLI — designed as a hands-on study tool for DevOps learners.
 
+## Live Demo
+
+The app is publicly deployed at **[https://devops-trainer.com](https://devops-trainer.com)**.
+
 ---
 
 ## Features
@@ -125,9 +129,29 @@ docker-compose down
 
 The Compose file sets `APP_ENV=production` and configures the container to restart unless stopped.
 
-## DevOps Learning Goals
+## Deployment & Infrastructure
 
-This project demonstrates several DevOps practices and patterns:
+The application is deployed in production on the following infrastructure:
+
+| Component       | Technology                         |
+|-----------------|------------------------------------|
+| Compute         | AWS EC2 (Ubuntu Server 24.04)      |
+| Containerization| Docker + Docker Compose            |
+| Reverse Proxy   | Nginx                              |
+| HTTPS           | Let's Encrypt (Certbot)            |
+| DNS             | Cloudflare                         |
+| App Server      | Flask (internal, port 5000)        |
+
+- **AWS EC2** — Ubuntu Server 24.04 VM hosting the Dockerized application
+- **Docker Compose** — Runs and manages the Flask container with restart policies and environment configuration
+- **Nginx** — Reverse proxy forwarding public traffic (ports 80/443) to the Flask app on port 5000
+- **Let's Encrypt** — Automated SSL/TLS certificate renewal via Certbot
+- **Cloudflare** — DNS management with proxied records for security and performance
+- **Security** — Only ports 80, 443, and 22 are publicly exposed
+
+## Infrastructure & DevOps Concepts
+
+The following infrastructure and DevOps concepts are demonstrated in this project:
 
 - **Containerization** — Dockerized Flask application using a lightweight Python base image and `.dockerignore` for cleaner builds
 - **Orchestration** — Docker Compose for service definition, environment configuration, and restart policies
@@ -135,6 +159,9 @@ This project demonstrates several DevOps practices and patterns:
 - **Readiness** — The `/health` and `/info` endpoints provide the foundation for container orchestration health probes
 - **Environment parity** — Single codebase runs identically in development (local) and production (containerized)
 - **Infrastructure as code** — All infrastructure definition lives in version-controlled files (`Dockerfile`, `docker-compose.yml`)
+- **Production deployment** — Hosted on AWS EC2 (Ubuntu Server 24.04) using Docker Compose in a real-world environment
+- **Reverse proxy** — Nginx routes public traffic from ports 80 and 443 to the Flask app running internally on port 5000
+- **DNS & HTTPS** — Domain managed through Cloudflare with SSL/TLS certificates automated via Let's Encrypt and Certbot
 
 ## Future Improvements
 
