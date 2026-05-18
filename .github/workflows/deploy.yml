@@ -31,6 +31,8 @@ jobs:
 
           key: ${{ secrets.EC2_SSH_KEY }}
 
-          script: |
+                    script: |
 
-  cd /home/ubuntu/devops-trainer-app && ./deploy.sh
+            cd /home/ubuntu/devops-trainer-app
+
+            ./deploy.sh
