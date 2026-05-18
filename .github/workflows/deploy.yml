@@ -33,6 +33,4 @@ jobs:
 
           script: |
 
-  cd /home/ubuntu/devops-trainer-app
-
-  ./deploy.sh
+  cd /home/ubuntu/devops-trainer-app && ./deploy.sh
